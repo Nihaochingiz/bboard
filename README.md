@@ -20,6 +20,8 @@ php artisan serve
  php -m | grep sqlite
 php artisan migrate
 sqlite3 database/database.sqlite
+php artisan db:seed --class=UsersTableSeeder
+php artisan migrate:fresh --seed
 SELECT * FROM users;
 
 INSERT INTO users (name, email, password, created_at, updated_at) 
