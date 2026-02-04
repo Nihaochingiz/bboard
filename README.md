@@ -18,8 +18,18 @@ php artisan serve
  sudo apt install php8.3-sqlite3
  sudo apt install php-sqlite3 sqlite3
  php -m | grep sqlite
- sqlite3 database/database.sqlite
- php artisan migrate
+php artisan migrate
+sqlite3 database/database.sqlite
+SELECT * FROM users;
+
+INSERT INTO users (name, email, password, created_at, updated_at) 
+VALUES (
+    'Имя Фамилия', 
+    'user@example.com', 
+    'хеш_пароля', 
+    datetime('now'), 
+    datetime('now')
+);
  ```
 
 # Запуск консоли laravel
