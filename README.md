@@ -24,6 +24,12 @@ php artisan db:seed --class=UsersTableSeeder
 php artisan migrate:fresh --seed
 SELECT * FROM users;
 
+# Получить спсиок объявлений
+sqlite3 database/database.sqlite
+SELECT * FROM bbs;
+
+
+
 INSERT INTO users (name, email, password, created_at, updated_at) 
 VALUES (
     'Имя Фамилия', 
@@ -33,31 +39,10 @@ VALUES (
     datetime('now')
 );
  ```
+# Данные для входа администратора
+admin@example.com
+admin
 
-# Запуск консоли laravel
-php artisan bb:create "Шкаф" "Совсем новый" 2000
-
-```bash
-$bb = App\Models\Bb::create([
-    'title' => 'Тестовый заголовок',
-    'content' => 'Тестовое описание',
-    'price' => 1500,
-]);
-
-// Теперь переменная $bb доступна
-echo $bb->id;
-
-$bb = App\Models\Bb::create([
-    'title' => 'Пылесос',
-    'content' => "Старый, ржавый, без шланга",
-    'price' => 1000,
-]);
-
-// Теперь переменная $bb доступна
-echo $bb->id;
-
-```
---- 
 
 
 php artisan make:command CreateBb
